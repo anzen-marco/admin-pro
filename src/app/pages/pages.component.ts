@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '../services/settings.service';
 
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.less']
 })
-export class PagesComponent implements OnInit {
-  public cssLink = document.querySelector('#theme');
+export class PagesComponent {
+  constructor ( private settingsService: SettingsService ) {
 
-  ngOnInit(): void {
-    let temaElegido = localStorage.getItem('tema') || './assets/css/colors/red.css';    
-    this.cssLink.setAttribute('href', temaElegido);
   }
 }
